@@ -12,11 +12,11 @@
     }
     function los() {
         var plec = losowaliczba(0,1);
-        if (plec = 0) { //mezczyzna
-        var imie = ["Szymon","Radosław","Damian","Bartek","Adam","Alan","Oskar","Cezary","Maciej","Aleks"];
-        var nazwisko = ["Jurczyński", "Zając", "Włodarczyk", "Borkowski","Szymański","Marciniak","Walczak","Wysocki","Sokołowski","Ulanowski"];
+        if (plec == 0) { //mezczyzna
+        var imie = ["Szymon","Radosław","Damian","Bartek","Adam","Alan","Oskar","Cezary","Maciej","Aleks","Mateusz"];
+        var nazwisko = ["Jurczyński", "Zając", "Włodarczyk", "Borkowski","Szymański","Marciniak","Walczak","Wysocki","Sokołowski","Ulanowski","Gawlik"];
         }
-        else if(plec = 1) { //kobieta
+        else if(plec == 1) { //kobieta
         var imie = ["Natasza","Izabela","Anna","Zofia","Dominika","Marta","Martyna","Justyna","Lena","Natalia"];
         var nazwisko = ["Zawadzka","Kowalczyk","Stępień","Krawczyk","Duda","Szczepańska","Nowak","Dudek","Michalak","Wójcik"];
         }

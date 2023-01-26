@@ -16,26 +16,25 @@
 </head>
 <body>
 <?php
+session_start();
 $servername = "localhost";
 $username = "admin";
 $password = "zaq1@WSX";
 $database = "loginsystem";
 $conn = new mysqli($servername, $username, $password, $database);
-$ulogin = mysqli_real_escape_string($conn,$_POST['uLogin']);
-$upassword = mysqli_real_escape_string($conn,$_POST['uPassword']); 
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: index.php?entry=3');
+	exit;
+}
 
-$sql = "SELECT ID,Imie FROM dane WHERE Login='$ulogin' AND password='$upassword'";
-$result = $conn->query($sql);
-    while($row = $result->fetch_assoc()) {
-        $uID = $row["ID"];
-        $uIMIE = $row["Imie"];
-    }
+
 
 $conn->close();
 ?>
 <div class="Menu">
-<img style="border-radius: 50%; width: 50px; height: 50px;" src="profilowe/profilowe<?php echo($uID);?>.png">
-<span> Witaj, <?php echo($uIMIE);?>!</span>
+<img style="border-radius: 50%; width: 50px; height: 50px;" src="profilowe/profilowe<?php echo($_SESSION['id']);?>.png">
+<span> Witaj, <?php echo($_SESSION['name']);?>!</br></span>
+<a href="logout.php">Wyloguj się</span>
 </div>
 
 
